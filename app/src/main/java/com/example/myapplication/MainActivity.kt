@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -11,7 +12,8 @@ class MainActivity : AppCompatActivity() {
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
-        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+        // Обработчик нажатия на элементы навигации
+        bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.item_1 -> {
                     // Обработка нажатия на item_1
@@ -32,5 +34,33 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        // Обработчик повторного нажатия на элементы навигации
+        bottomNavigationView.setOnItemReselectedListener { item ->
+            when (item.itemId) {
+                R.id.item_1 -> {
+
+                }
+                R.id.item_2 -> {
+                    // Обработка повторного нажатия на item_2
+                }
+                R.id.item_3 -> {
+                    // Обработка повторного нажатия на item_3
+                }
+                R.id.item_4 -> {
+                    // Обработка повторного нажатия на item_4
+                }
+            }
+        }
+
+        // Пример добавления бейджа к элементу item_3
+        val badge = bottomNavigationView.getOrCreateBadge(R.id.item_3)
+        badge.isVisible = true
+        badge.number = 5 // Устанавливаем количество или текст для бейджа
+
+        // Если нужно скрыть бейдж
+        val badgeDrawable = bottomNavigationView.getBadge(R.id.item_3)
+        badgeDrawable?.isVisible = false
+        badgeDrawable?.clearNumber()
     }
 }
