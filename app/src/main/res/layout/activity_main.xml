@@ -6,16 +6,12 @@
     android:layout_height="match_parent">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- SearchBar размещен сверху -->
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.Material3.AppBar">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.search.SearchBar
                 android:id="@+id/search_bar"
@@ -25,21 +21,18 @@
                 app:layout_scrollFlags="scroll|enterAlways" />
         </com.google.android.material.appbar.AppBarLayout>
 
-        <!-- Основное содержимое экрана -->
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp">
 
-            <!-- Здесь размещается основной контент приложения -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Content goes here..."
+                android:text="@string/content_goes_here"
                 android:textSize="18sp"/>
         </androidx.core.widget.NestedScrollView>
 
-        <!-- Полноэкранное окно поиска -->
         <com.google.android.material.search.SearchView
             android:id="@+id/search_view"
             android:layout_width="match_parent"
@@ -48,7 +41,6 @@
             app:layout_anchor="@id/search_bar" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -62,7 +54,6 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
         app:menu="@menu/bottom_navigation_menu"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent" />

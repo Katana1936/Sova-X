@@ -4,4 +4,7 @@
     <string name="calls">Calls</string>
     <string name="chats">Chats</string>
     <string name="settings">Settings</string>
+    <string name="search_hint" />
+    <string name="searchhint">searchhint</string>
+    <string name="content_goes_here">Content goes here...</string>
 </resources>
