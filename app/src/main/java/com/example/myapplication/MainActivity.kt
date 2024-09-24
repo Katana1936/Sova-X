@@ -1,14 +1,23 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
+import com.google.android.material.search.SearchBar
+import com.google.android.material.search.SearchView
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var  searcBar: SearchBar
+    private lateinit var  searcView: SearchView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        searcBar = findViewById(R.id.search_bar)
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
