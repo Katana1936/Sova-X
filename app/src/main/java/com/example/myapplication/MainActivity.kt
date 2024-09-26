@@ -4,16 +4,36 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.search.SearchBar
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var searchBar: SearchBar
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var chatListAdapter: ChatListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         searchBar = findViewById(R.id.search_bar)
+        recyclerView = findViewById(R.id.recycler_view)
+
+
+        val chatList = listOf(
+            Chat("Иван Иванов", "Последнее сообщение 1", "https://example.com/photo1.jpg"),
+            Chat("Анна Петрова", "Последнее сообщение 2", "https://example.com/photo2.jpg"),
+            Chat("Алексей Смирнов", "Последнее сообщение 3", "https://example.com/photo3.jpg")
+        )
+
+        chatListAdapter = ChatListAdapter(chatList)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = chatListAdapter
+
+
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
