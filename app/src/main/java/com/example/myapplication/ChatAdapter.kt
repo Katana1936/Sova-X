@@ -29,10 +29,8 @@ class ChatListAdapter(private val chatList: List<Chat>) : RecyclerView.Adapter<C
         holder.chatNameTextView.text = chat.chatName
         holder.lastMessageTextView.text = chat.lastMessage
 
-        // Используем Glide для загрузки фото в ImageView
         Glide.with(holder.itemView.context)
-            .load(chat.photoUrl)  // URL фото
-            .placeholder(R.drawable.ic_placeholder)  // Плейсхолдер на случай, если фото не загрузится
+            .load(chat.photoUrl)
             .into(holder.chatImageView)
     }
 

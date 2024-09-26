@@ -7,4 +7,5 @@
     <string name="search_hint" />
     <string name="searchhint">searchhint</string>
     <string name="content_goes_here">Content goes here...</string>
+    <string name="ic_profile">ic_profile</string>
 </resources>
