@@ -6,10 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.myapplication.R
-
-data class Chat(val chatName: String, val lastMessage: String, val photoUrl: String)
 
 class ChatListAdapter(private val chatList: List<Chat>) : RecyclerView.Adapter<ChatListAdapter.ChatViewHolder>() {
 
@@ -28,10 +24,7 @@ class ChatListAdapter(private val chatList: List<Chat>) : RecyclerView.Adapter<C
         val chat = chatList[position]
         holder.chatNameTextView.text = chat.chatName
         holder.lastMessageTextView.text = chat.lastMessage
-
-        Glide.with(holder.itemView.context)
-            .load(chat.photoUrl)
-            .into(holder.chatImageView)
+        holder.chatImageView.setImageResource(chat.photoResId)
     }
 
     override fun getItemCount(): Int = chatList.size

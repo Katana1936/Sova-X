@@ -8,4 +8,6 @@
     <string name="searchhint">searchhint</string>
     <string name="content_goes_here">Content goes here...</string>
     <string name="ic_profile">ic_profile</string>
+    <string name="chat_name">Chat Name</string>
+    <string name="last_message">Last message</string>
 </resources>
