@@ -1,0 +1,4 @@
+package Contacts
+
+class ContactsAdapter {
+}

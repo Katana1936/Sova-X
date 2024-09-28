@@ -1,13 +1,21 @@
-package com.example.myapplication
+package com.example.myapplication.chat
 
+import Chat.Chat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.R
 
 class ChatListAdapter(private val chatList: List<Chat>) : RecyclerView.Adapter<ChatListAdapter.ChatViewHolder>() {
+
+
+    fun updateList(newList: List<Chat>) {
+        chatList = newList
+        notifyDataSetChanged()
+    }
 
     class ChatViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val chatNameTextView: TextView = view.findViewById(R.id.chat_name_text_view)
