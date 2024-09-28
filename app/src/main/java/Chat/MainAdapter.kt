@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.R
 
-class ChatListAdapter(private val chatList: List<Chat>) : RecyclerView.Adapter<ChatListAdapter.ChatViewHolder>() {
+class ChatListAdapter(private var chatList: List<Chat>) : RecyclerView.Adapter<ChatListAdapter.ChatViewHolder>() {
 
 
     fun updateList(newList: List<Chat>) {
