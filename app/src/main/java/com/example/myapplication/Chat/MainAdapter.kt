@@ -1,6 +1,6 @@
 package com.example.myapplication.chat
 
-import Chat.Chat
+import com.example.myapplication.Chat.Chat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
