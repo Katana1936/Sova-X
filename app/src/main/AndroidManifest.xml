@@ -21,6 +21,13 @@
             </intent-filter>
         </activity>
 
+
+
+        <activity
+            android:name=".ChatActivity"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

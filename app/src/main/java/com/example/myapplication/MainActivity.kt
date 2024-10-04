@@ -14,7 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var chatListAdapter: ChatListAdapter
+    private lateinit var chatListAdapter: CustomChatListAdapter
 
     private val originalChatList = listOf(
         Chat("Иван Иванов", "Последнее сообщение 1", R.drawable.ic_profile),
@@ -33,15 +33,15 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
 
-        chatListAdapter = ChatListAdapter(displayedChatList) { chat -> openChat(chat) }
+        chatListAdapter = CustomChatListAdapter(displayedChatList) { chat -> openChat(chat) }
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = chatListAdapter
     }
 
     // Метод для открытия чата
-    private fun openChat(chat: Chat) {
+    private fun openChat(chat: Any) {
         val intent = Intent(this, ChatActivity::class.java).apply {
-            putExtra("chat_name", chat.chatName)
+            //putExtra("chat_name", chat.chatName) СТАСИК ТУТ ДОПИШИ
         }
         startActivity(intent)
     }

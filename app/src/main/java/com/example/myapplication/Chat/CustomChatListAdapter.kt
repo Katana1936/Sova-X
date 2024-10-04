@@ -1,17 +1,15 @@
 package com.example.myapplication
 
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myapplication.Chat.Chat
 
-
-class ChatListAdapter(
+class CustomChatListAdapter(
     private val chatList: List<Chat>,
     private val onChatClick: (Chat) -> Unit
-) : RecyclerView.Adapter<ChatListAdapter.ChatViewHolder>() {
+) : RecyclerView.Adapter<CustomChatListAdapter.ChatViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_chat_list, parent, false)
@@ -22,7 +20,7 @@ class ChatListAdapter(
         val chat = chatList[position]
         holder.bind(chat)
         holder.itemView.setOnClickListener {
-            onChatClick(chat) // Передаем клик на обработку
+            onChatClick(chat)
         }
     }
 
@@ -31,7 +29,7 @@ class ChatListAdapter(
     class ChatViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(chat: Chat) {
-
+            // Привязка данных чата
         }
     }
 }
