@@ -1,15 +1,14 @@
-package com.example.myapplication.chat
+package com.example.myapplication
 
-import com.example.myapplication.Chat.Chat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myapplication.R
+import com.example.myapplication.Chat.Chat
 
-class ChatListAdapter(private var chatList: List<Chat>) : RecyclerView.Adapter<ChatListAdapter.ChatViewHolder>() {
+class ChatListAdapter(private var chatList: List<Chat>, param: (Any) -> Unit) : RecyclerView.Adapter<ChatListAdapter.ChatViewHolder>() {
 
 
     fun updateList(newList: List<Chat>) {
